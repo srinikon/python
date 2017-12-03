@@ -51,7 +51,7 @@ def RemoveDuplicates(head):
     return(h)
 
 
-# Lists
+# Dashboard > Python > Basic Data Types > Lists
 if __name__ == '__main__':
     N = int(input())
     cmd = []
@@ -75,3 +75,52 @@ if __name__ == '__main__':
             list.pop()
         elif(temp[0] == 'reverse'):
             list.reverse()
+
+            
+## Dashboard > Python > Basic Data Types > List Comprehensions
+if __name__ == '__main__':
+    x = int(input())
+    y = int(input())
+    z = int(input())
+    n = int(input())
+    
+    lx = []
+    ly = []
+    lz = []
+    
+    for i in range(0, x+1):
+        lx.append(i)
+    for i in range(0, y+1):
+        ly.append(i)
+    for i in range(0, z+1):
+        lz.append(i)
+
+    
+    ltemp = []
+    for x1 in lx:
+        for y1 in ly:
+            for z1 in lz:
+                if (x1 + y1 + z1 != n):
+                    ltemp.append([x1, y1, z1])
+    
+    print(ltemp)
+
+
+# Dashboard > Python > Basic Data Types > Find the Second Largest Number
+if __name__ == '__main__':
+    n = int(input())
+    arr = list(map(int, input().split()))
+    h2 = h1 = None
+    for i in range(0, n):
+        if(h1 == None):
+            h1 = arr[i]
+        elif(arr[i] > h1):
+            h2 = h1
+            h1 = arr[i]
+        elif(arr[i] == h1):
+            continue
+        elif(h2 == None):
+            h2 = arr[i]
+        elif(arr[i] > h2):
+            h2 = arr[i]
+    print(h2)
